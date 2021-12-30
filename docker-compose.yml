@@ -1,0 +1,35 @@
+version: '3.4'
+
+services: 
+  proxy:
+    build: 
+      context: ./Reverse-proxy
+      dockerfile: Dockerfile
+    depends_on:
+       - weatherapi
+    ports:
+       - "4200:80"
+
+  weatherapi:
+    build:
+       context: WeatherAPI/
+    ports:
+    - "8000:80"
+    - "8001:443"
+    environment:
+      ASPNETCORE_URLS: http://+:80
+      ASPNETCORE_ENVIRONMENT: Development
+    volumes:
+      - ${APPDATA}\microsoft\UserSecrets\:/root/.microsoft/usersecrets
+
+  mathscalculator:
+    build: 
+      context: MathsCalculatorAPI/
+    ports:
+    - "8003:80"
+    - "8004:443"
+    environment:
+      ASPNETCORE_URLS: http://+:80
+      ASPNETCORE_ENVIRONMENT: Development
+    volumes:
+      - ${APPDATA}\microsoft\UserSecrets\:/root/.microsoft/usersecrets

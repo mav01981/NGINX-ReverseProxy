@@ -1,0 +1,19 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/ReverseProxy/v16
+/.vs/ReverseProxy/v17
+/.vs/ReverseProxy
+/.vscode
+/bin/Debug
+/MathsCalculatorAPI/bin/Debug/net5.0
+/MathsCalculatorAPI/obj
+/obj
+/reverse-proxy/obj/Docker
+/WeatherAPI/bin/Debug/net5.0
+/WeatherAPI/obj
+/WeatherAPI/WeatherAPI.csproj.user
+/docker-compose.dcproj.user
+/Personal.Swagger.Extensions/bin/Debug/net5.0
+/Personal.Swagger.Extensions/obj
